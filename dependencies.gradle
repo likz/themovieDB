@@ -1,7 +1,9 @@
 ext.versions = [
-        sdk              : '30',
-        minSdk           : '19',
+        sdk              : 30,
+        minSdk           : 19,
         buildTools       : '30.0.3',
+        versionCode      : 1,
+        versionName      : '1.0.0',
 
         jvmTarget        : "1.8",
 
@@ -9,6 +11,7 @@ ext.versions = [
 
         room             : '2.2.6',
 
+        constraintlayout : '2.0.4',
         appcompat        : '1.2.0',
         koin             : '2.2.2',
         lifecycle        : '2.3.1',

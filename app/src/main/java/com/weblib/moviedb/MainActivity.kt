@@ -7,6 +7,7 @@ import com.weblib.movieui.PopularViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
+    private val logName = MainActivity::class.java.canonicalName
     private val popularViewModel by viewModel<PopularViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,9 +17,9 @@ class MainActivity : AppCompatActivity() {
         popularViewModel.getAllPopulars()
 
         popularViewModel.movieList.observe(this, {
-            Log.e("@@Populars", it.size.toString())
+            Log.e(logName, "@@Populars ${it.size}")
             if (it.isNotEmpty() && it != null) {
-                Log.e("Populars", it.toString())
+                Log.e(logName,"Populars $it")
             }
         })
     }

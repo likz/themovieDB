@@ -4,17 +4,32 @@ plugins {
 }
 apply from: '../dependencies.gradle'
 
+def getProperty(String filename, String propName) {
+    def propsFile = rootProject.file(filename)
+    if (propsFile.exists()) {
+        def props = new Properties()
+        props.load(new FileInputStream(propsFile))
+        if (props[propName] != null) {
+            return props[propName]
+        } else {
+            print("No such property " + propName + " in file " + filename)
+        }
+    } else {
+        print(filename + " does not exist!")
+    }
+}
+
 android {
-    compileSdkVersion 30
-    buildToolsVersion '30.0.3'
+    compileSdkVersion versions.sdk
+    buildToolsVersion versions.buildTools
 
     defaultConfig {
-        minSdkVersion 19
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.sdk
+        versionCode versions.versionCode
+        versionName versions.versionName
 
-        buildConfigField "String", "API_KEY", "\"49c972527456ed70bfea37b9a95c3f4a\""
+        buildConfigField "String", "API_KEY", "\"${getProperty("gradle.properties", "API_KEY")}\""
     }
 
     buildTypes {
