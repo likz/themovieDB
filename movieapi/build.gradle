@@ -1,8 +1,6 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
-    id "kotlin-parcelize"
-    id "org.jetbrains.kotlin.kapt"
 }
 apply from: '../dependencies.gradle'
 
@@ -16,7 +14,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "API_KEY", "\"49c972527456ed70bfea37b9a95c3f4a\""
     }
 
     buildTypes {
@@ -34,10 +32,11 @@ android {
 }
 
 dependencies {
-
-    implementation "androidx.room:room-runtime:$versions.room"
-    kapt "androidx.room:room-compiler:$versions.room"
+    implementation project(":metadata")
 
     //retrofit
     implementation "com.squareup.retrofit2:retrofit:$versions.retrofit"
+
+    //test
+    testImplementation "junit:junit:$versions.junit"
 }
