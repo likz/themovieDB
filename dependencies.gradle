@@ -1,0 +1,14 @@
+ext.versions = [
+        sdk              : '30',
+        minSdk           : '19',
+        buildTools       : '30.0.3',
+
+        jvmTarget        : "1.8",
+
+        kotlin           : "1.4.32",
+
+
+        room             : '2.2.6',
+
+        retrofit         : '2.9.0',
+]
