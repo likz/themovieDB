@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/metadata" />
             <option value="$PROJECT_DIR$/movieapi" />
+            <option value="$PROJECT_DIR$/movieui" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
