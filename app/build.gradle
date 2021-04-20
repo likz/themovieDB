@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'org.jetbrains.kotlin.android.extensions'
+    id 'kotlin-kapt'
 }
 apply from: '../dependencies.gradle'
 
@@ -32,10 +34,15 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
     implementation project(":movieui")
+    implementation project(":metadata")
 
 
     // Koin for the dependencies injections
@@ -50,10 +57,12 @@ dependencies {
 
     implementation "androidx.multidex:multidex:$versions.multidex"
 
-
     implementation "androidx.appcompat:appcompat:$versions.appcompat"
     implementation "com.google.android.material:material:$versions.material"
     implementation "androidx.constraintlayout:constraintlayout:$versions.constraintlayout"
+
+    // glide
+    implementation "com.github.bumptech.glide:glide:$versions.glide"
 
     testImplementation "junit:junit:$versions.junit"
     androidTestImplementation "androidx.test.ext:junit:$versions.junitext"

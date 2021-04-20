@@ -12,15 +12,15 @@ import kotlinx.coroutines.launch
 
 class PopularViewModel(private val popularProvider : PopularProvider) : ViewModel() {
 
-    val showLoading = ObservableBoolean()
+    var isLoading: Boolean = false
     val movieList = MutableLiveData<List<Movie>>()
     val showError = SingleLiveEvent<String>()
 
     fun getAllPopulars() {
-        showLoading.set(true)
+        isLoading = true
         viewModelScope.launch {
             val result =  popularProvider.getAllPopulars()
-            showLoading.set(false)
+            isLoading = false
             when (result) {
                 is RequestResult.Success -> {
                     movieList.value = result.successData.results
