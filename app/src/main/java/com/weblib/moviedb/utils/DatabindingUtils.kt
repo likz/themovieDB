@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.weblib.metadata.Movie
 import com.weblib.moviedb.R
-import com.weblib.moviedb.view.PopularListAdapter
+import com.weblib.moviedb.view.populars.PopularListAdapter
 
 fun getPosterPath(posterPath: String) = "https://image.tmdb.org/t/p/w342$posterPath"
 

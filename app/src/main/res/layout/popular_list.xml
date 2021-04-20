@@ -12,7 +12,7 @@
             type="com.weblib.metadata.Movie"/>
     </data>
 
-    <com.weblib.moviedb.view.MovieCardView
+    <com.weblib.moviedb.view.populars.MovieCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/card_side_margin"
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/plant_item_image"
+                android:id="@+id/popular_item_image"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/popular_item_image_height"
                 android:contentDescription="@string/description"
@@ -39,7 +39,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/plant_item_title"
+                android:id="@+id/popular_item_title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/margin_normal"
@@ -49,12 +49,12 @@
                 android:gravity="center_horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/plant_item_image"
+                app:layout_constraintTop_toBottomOf="@id/popular_item_image"
                 app:layout_constraintBottom_toBottomOf="parent"
                 tools:text="Movie"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </com.weblib.moviedb.view.MovieCardView>
+    </com.weblib.moviedb.view.populars.MovieCardView>
 
 </layout>

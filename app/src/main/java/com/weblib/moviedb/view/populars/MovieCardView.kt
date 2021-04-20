@@ -1,4 +1,4 @@
-package com.weblib.moviedb.view
+package com.weblib.moviedb.view.populars
 
 import android.annotation.SuppressLint
 import android.content.Context

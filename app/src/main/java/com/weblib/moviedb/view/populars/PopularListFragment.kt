@@ -1,4 +1,4 @@
-package com.weblib.moviedb.view
+package com.weblib.moviedb.view.populars
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.weblib.moviedb.databinding.FragmentPopularBinding
+import com.weblib.moviedb.view.RecyclerViewPaginator
 import com.weblib.movieui.PopularViewModel
 import kotlinx.android.synthetic.main.fragment_popular.*
 import org.koin.android.viewmodel.ext.android.viewModel

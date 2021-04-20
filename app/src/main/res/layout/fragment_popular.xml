@@ -11,7 +11,7 @@
 
         <variable
             name="populardapter"
-            type="com.weblib.moviedb.view.PopularListAdapter" />
+            type="com.weblib.moviedb.view.populars.PopularListAdapter" />
     </data>
 
     <RelativeLayout

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">All popular</string>
     <string name="description">Content description</string>
+    <string name="movie_details_title">Movie details</string>
 </resources>
