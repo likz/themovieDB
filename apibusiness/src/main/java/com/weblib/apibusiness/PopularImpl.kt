@@ -1,22 +1,35 @@
 package com.weblib.apibusiness
 
-import com.weblib.metadata.PopularListResponse
+import com.weblib.metadata.Movie
 import com.weblib.metadata.RequestResult
+import com.weblib.metadata.database.MovieDao
 import com.weblib.movieapi.PopularApi
 import com.weblib.movieapi.handleApiError
-import com.weblib.movieapi.handleSuccess
 
-class PopularImpl (
+class PopularImpl(
     private val popularApi: PopularApi,
     private val connectivityChecker: ConnectivityChecker,
-): PopularProvider{
+    private val movieDao: MovieDao,
+) : PopularProvider {
 
-    override suspend fun getAllPopulars(): RequestResult<PopularListResponse> {
+    override suspend fun getAllPopulars(page: Int): RequestResult<List<Movie>> {
+        val popularList = movieDao.getMovieList(page)
+        if (popularList.isNotEmpty()) {
+            return RequestResult.Success(popularList)
+        }
+
         return if (connectivityChecker.isConnected()) {
             try {
-                val response = popularApi.getAllPopulars()
+                val response = popularApi.getAllPopulars(page)
                 if (response.isSuccessful) {
-                    handleSuccess(response)
+                    return response.body()?.let {
+                        val result = it.results.map { movie ->
+                            movie.page = page
+                            movie
+                        }
+                        movieDao.insertMovieList(result)
+                        RequestResult.Success(result)
+                    } ?: handleApiError(response)
                 } else {
                     handleApiError(response)
                 }

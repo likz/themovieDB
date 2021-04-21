@@ -1,10 +1,7 @@
 package com.weblib.moviedb
 
 import android.app.Application
-import com.weblib.movieui.apiModule
-import com.weblib.movieui.networkModule
-import com.weblib.movieui.providerModule
-import com.weblib.movieui.viewModelsModule
+import com.weblib.movieui.module.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -21,6 +18,7 @@ class MovieDBApplication : Application() {
                 apiModule,
                 viewModelsModule,
                 providerModule,
+                databaseModule
             )
         }
     }

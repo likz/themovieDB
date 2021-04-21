@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">All popular</string>
     <string name="description">Content description</string>
+    <string name="release_date">Release date</string>
+    <string name="original_language">Original language</string>
     <string name="movie_details_title">Movie details</string>
 </resources>

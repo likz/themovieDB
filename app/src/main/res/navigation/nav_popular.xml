@@ -11,12 +11,12 @@
         tools:layout="@layout/fragment_popular">
 
         <action
-                android:id="@+id/action_popular_to_movie_detail_fragment"
-                app:destination="@id/movie_details_fragment"
-                app:enterAnim="@anim/slide_in_right"
-                app:exitAnim="@anim/slide_out_left"
-                app:popEnterAnim="@anim/slide_in_left"
-                app:popExitAnim="@anim/slide_out_right" />
+            android:id="@+id/action_popular_to_movie_detail_fragment"
+            app:destination="@id/movie_details_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment

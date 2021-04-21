@@ -1,33 +1,34 @@
 ext.versions = [
-        sdk              : 30,
-        minSdk           : 19,
-        buildTools       : '30.0.3',
-        versionCode      : 1,
-        versionName      : '1.0.0',
+        sdk             : 30,
+        minSdk          : 19,
+        buildTools      : '30.0.3',
+        versionCode     : 1,
+        versionName     : '1.0.0',
 
-        jvmTarget        : "1.8",
+        jvmTarget       : "1.8",
 
-        kotlin           : "1.4.32",
+        kotlin          : "1.4.32",
 
-        room             : '2.2.6',
+        room            : '2.2.6',
 
-        constraintlayout : '2.0.4',
-        appcompat        : '1.2.0',
-        glide            : '4.10.0',
-        koin             : '2.2.2',
-        lifecycle        : '2.3.1',
-        multidex         : '2.0.1',
-        material         : '1.3.0',
-        navigation       : '2.3.5',
-        okhttp           : '4.7.2',
-        retrofit         : '2.9.0',
+        constraintlayout: '2.0.4',
+        archCompoment   : '2.1.0',
+        appcompat       : '1.2.0',
+        glide           : '4.10.0',
+        gson            : '2.8.6',
+        koin            : '2.2.2',
+        lifecycle       : '2.3.1',
+        multidex        : '2.0.1',
+        material        : '1.3.0',
+        navigation      : '2.3.5',
+        okhttp          : '4.7.2',
+        retrofit        : '2.9.0',
+        paging          : '2.1.2',
+        work            : '2.5.0',
 
-        junit            : '4.13.2',
-        junitext         : '1.1.2',
-        espresso         : '3.3.0',
-
-
-
+        junit           : '4.13.2',
+        junitext        : '1.1.2',
+        espresso        : '3.3.0',
 
 
 ]

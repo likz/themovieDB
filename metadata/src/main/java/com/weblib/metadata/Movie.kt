@@ -9,6 +9,7 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 @Entity
 data class Movie(
+    var page: Int,
     var poster_path: String?,
     val adult: Boolean,
     val overview: String,
@@ -22,5 +23,5 @@ data class Movie(
     val popularity: Float,
     val vote_count: Int,
     val video: Boolean,
-    val vote_average: Float
+    var vote_average: Float
 ) : Parcelable

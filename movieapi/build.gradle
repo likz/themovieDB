@@ -51,7 +51,10 @@ dependencies {
 
     //retrofit
     implementation "com.squareup.retrofit2:retrofit:$versions.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$versions.retrofit"
 
     //test
     testImplementation "junit:junit:$versions.junit"
+    testImplementation "com.squareup.okhttp3:mockwebserver:$versions.okhttp"
+    testImplementation "androidx.arch.core:core-testing:$versions.archCompoment"
 }

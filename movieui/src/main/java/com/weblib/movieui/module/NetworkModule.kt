@@ -1,4 +1,4 @@
-package com.weblib.movieui
+package com.weblib.movieui.module
 
 import com.weblib.apibusiness.ConnectivityChecker
 import com.weblib.apibusiness.ConnectivityCheckerImpl
@@ -11,8 +11,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 val networkModule = module {
-    val connectTimeout : Long = 40// 20s
-    val readTimeout : Long  = 40 // 20s
+    val connectTimeout: Long = 40// 20s
+    val readTimeout: Long = 40 // 20s
 
     single<OkHttpClient> {
         OkHttpClient.Builder()
@@ -21,7 +21,7 @@ val networkModule = module {
                 addInterceptor(RequestInterceptor())
             }.build()
     }
-    single<Retrofit>{
+    single<Retrofit> {
         val baseUrl = "https://api.themoviedb.org/"
         Retrofit.Builder()
             .baseUrl(baseUrl)
@@ -31,7 +31,7 @@ val networkModule = module {
             .build()
     }
 
-    single<ConnectivityChecker>{
+    single<ConnectivityChecker> {
         ConnectivityCheckerImpl(get())
     }
 }

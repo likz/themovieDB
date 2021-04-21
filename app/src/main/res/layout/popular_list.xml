@@ -1,15 +1,16 @@
-
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="clickListener"
-            type="android.view.View.OnClickListener"/>
+            type="android.view.View.OnClickListener" />
+
         <variable
             name="movie"
-            type="com.weblib.metadata.Movie"/>
+            type="com.weblib.metadata.Movie" />
     </data>
 
     <com.weblib.moviedb.view.populars.MovieCardView
@@ -42,16 +43,16 @@
                 android:id="@+id/popular_item_title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/margin_normal"
                 android:layout_marginTop="@dimen/margin_normal"
+                android:layout_marginBottom="@dimen/margin_normal"
+                android:gravity="center_horizontal"
                 android:text="@{movie.title}"
                 android:textAppearance="?attr/textAppearanceListItem"
-                android:gravity="center_horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/popular_item_image"
-                app:layout_constraintBottom_toBottomOf="parent"
-                tools:text="Movie"/>
+                tools:text="Movie" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

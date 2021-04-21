@@ -43,6 +43,7 @@ dependencies {
     implementation project(":apibusiness")
 
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycle"
 
     // Koin for the dependencies injections
     implementation "org.koin:koin-android-viewmodel:$versions.koin"
@@ -54,9 +55,11 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$versions.retrofit"
     implementation "com.squareup.retrofit2:adapter-rxjava3:$versions.retrofit"
     implementation "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+    implementation 'androidx.room:room-runtime:2.2.6'
 
     //test
     testImplementation "junit:junit:$versions.junit"
     androidTestImplementation "androidx.test.ext:junit:$versions.junitext"
     androidTestImplementation "androidx.test.espresso:espresso-core:$versions.espresso"
+    annotationProcessor 'androidx.room:room-compiler:2.2.6'
 }

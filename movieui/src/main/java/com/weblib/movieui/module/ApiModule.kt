@@ -1,4 +1,4 @@
-package com.weblib.movieui
+package com.weblib.movieui.module
 
 import com.weblib.movieapi.PopularApi
 import org.koin.dsl.module

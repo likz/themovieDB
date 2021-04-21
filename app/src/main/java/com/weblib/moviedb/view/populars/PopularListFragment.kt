@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.weblib.moviedb.databinding.FragmentPopularBinding
 import com.weblib.moviedb.view.RecyclerViewPaginator
-import com.weblib.movieui.PopularViewModel
+import com.weblib.movieui.viewmodel.PopularViewModel
 import kotlinx.android.synthetic.main.fragment_popular.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -46,7 +46,7 @@ class PopularListFragment : Fragment() {
     }
 
     private fun loadMore(page: Int) {
-        viewModel.getAllPopulars()
+        viewModel.getAllPopulars(page)
     }
 
     private fun subscribeUi(adapter: PopularListAdapter) {

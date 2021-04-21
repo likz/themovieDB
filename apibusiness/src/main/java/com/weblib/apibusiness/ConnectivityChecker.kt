@@ -14,11 +14,13 @@ class ConnectivityCheckerImpl(private val context: Context) : ConnectivityChecke
 
     override fun isConnected(): Boolean {
         val isConnected: Boolean
-        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val connectivityManager =
+            context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
 
         isConnected = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             val activeNetwork = connectivityManager.activeNetwork
-            val networkCapabilities = connectivityManager.getNetworkCapabilities(activeNetwork) ?: return false
+            val networkCapabilities =
+                connectivityManager.getNetworkCapabilities(activeNetwork) ?: return false
             when {
                 networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
                 networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
